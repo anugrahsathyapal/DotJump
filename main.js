@@ -19,10 +19,18 @@ setInterval(function(){
     }
     if (characterTop > 470 || (blockLeft < 20 && blockLeft > -50 && (characterTop < holeTop || characterTop > holeTop + 120))) {
         alert("Game Over !!!!!!!!!!\nScore: " + counter);
-        character.style.top = 100 + "px";
+        character.style.top = "100px";
+        block.style.animation = "none";
+        hole.style.animation = "none";
+        block.style.left = "400px";
+        hole.style.left = "400px";
         counter = 0;
-        
+        setTimeout(() => {
+            block.style.animation = "block 2s linear infinite";
+            hole.style.animation = "block 2s linear infinite";
+        }, 10);
     }
+    
     
 },10)
 
